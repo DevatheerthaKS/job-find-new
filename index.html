@@ -67,7 +67,7 @@
     <h2>Personality Quiz</h2>
     <div id="question-container"></div>
     <div class="progress" id="progress"></div>
-    <button onclick="nextQuestion()">Next</button>
+    <button id="next-button" onclick="nextQuestion()" disabled>Next</button>
   </div>
 
   <!-- Recommendations Section -->
@@ -94,22 +94,7 @@
     { question: "Are you comfortable solving complex problems?", options: ["Yes, I thrive on challenges", "Sometimes", "Rarely", "No, I prefer simple tasks"], scores: [1, 2, 3, 4] },
     { question: "Do you enjoy creative activities like writing or art?", options: ["Yes, I love it", "Sometimes", "Rarely", "No, I dislike it"], scores: [4, 3, 2, 1] },
     { question: "How do you feel about working in teams?", options: ["I love teamwork", "I’m okay with it", "I prefer working alone", "I avoid it"], scores: [4, 3, 2, 1] },
-    { question: "Are you interested in coding or programming?", options: ["Yes, I enjoy it", "Sometimes", "Rarely", "No, I dislike it"], scores: [1, 2, 3, 4] },
-    { question: "Do you enjoy helping others solve problems?", options: ["Yes, I love it", "Sometimes", "Rarely", "No, I dislike it"], scores: [4, 3, 2, 1] },
-    { question: "Are you detail-oriented?", options: ["Yes, very much", "Somewhat", "Not really", "No, I focus on the big picture"], scores: [2, 3, 4, 1] },
-    { question: "Do you enjoy public speaking?", options: ["Yes, I love it", "Sometimes", "Rarely", "No, I avoid it"], scores: [4, 3, 2, 1] },
-    { question: "Are you passionate about environmental issues?", options: ["Yes, very much", "Somewhat", "Not really", "No, not at all"], scores: [4, 3, 2, 1] },
-    { question: "Do you enjoy analyzing data?", options: ["Yes, I find it fascinating", "Sometimes", "Rarely", "No, I dislike it"], scores: [1, 2, 3, 4] },
-    { question: "Are you comfortable leading a team?", options: ["Absolutely", "Yes, but occasionally", "Not really", "I prefer working alone"], scores: [4, 3, 2, 1] },
-    { question: "How important is job flexibility to you?", options: ["Very important", "Somewhat important", "Not very important", "Not important at all"], scores: [1, 2, 3, 4] },
-    { question: "Do you enjoy traveling for work?", options: ["Yes, I love it", "Sometimes", "Rarely", "No, I prefer staying local"], scores: [4, 3, 2, 1] },
-    { question: "Are you interested in entrepreneurship?", options: ["Yes, I want to start my own business", "Maybe someday", "Not really", "No, I prefer working for others"], scores: [3, 2, 1, 4] },
-    { question: "Do you enjoy teaching or mentoring others?", options: ["Yes, I love it", "Sometimes", "Rarely", "No, I dislike it"], scores: [4, 3, 2, 1] },
-    { question: "Are you comfortable with taking risks?", options: ["Yes, I embrace risks", "Sometimes", "Rarely", "No, I avoid risks"], scores: [3, 2, 1, 4] },
-    { question: "How do you handle stress?", options: ["Stay calm and focused", "Follow a plan", "Take breaks and recharge", "Seek support from others"], scores: [3, 2, 1, 4] },
-    { question: "Do you enjoy working outdoors?", options: ["Yes, I love it", "Sometimes", "Rarely", "No, I prefer indoor work"], scores: [4, 3, 2, 1] },
-    { question: "How do you prefer to learn new skills?", options: ["Through hands-on practice", "By reading books/articles", "Through online courses", "By attending workshops"], scores: [1, 2, 3, 4] },
-    { question: "What motivates you most in a job?", options: ["Innovation and creativity", "Stability and security", "Freedom and autonomy", "Helping others and teamwork"], scores: [3, 2, 1, 4] }
+    { question: "Are you interested in coding or programming?", options: ["Yes, I enjoy it", "Sometimes", "Rarely", "No, I dislike it"], scores: [1, 2, 3, 4] }
   ];
 
   const recommendations = {
@@ -134,12 +119,12 @@
   let currentQuestionIndex = 0;
   let totalScore = 0;
 
-  // Start Quiz
+  // Start Quiz Functionality
   function startQuiz() {
-    console.log("Start quiz button clicked");
-    document.getElementById('start-section').classList.add('hidden');
-    document.getElementById('quiz-section').classList.remove('hidden');
-    loadQuestion();
+    console.log("Start Quiz button clicked"); // Debugging line
+    document.getElementById('start-section').classList.add('hidden'); // Hide start section
+    document.getElementById('quiz-section').classList.remove('hidden'); // Show quiz section
+    loadQuestion(); // Load the first question
   }
 
   // Load Question
@@ -217,3 +202,4 @@
 
 </body>
 </html>
+ 
